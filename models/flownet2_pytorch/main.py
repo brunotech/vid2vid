@@ -171,10 +171,7 @@ if __name__ == '__main__':
 
                 loss_values = self.loss(output, target)
 
-                if not inference :
-                    return loss_values
-                else :
-                    return loss_values, output
+                return (loss_values, output) if inference else loss_values
 
         model_and_loss = ModelAndLoss(args)
 
